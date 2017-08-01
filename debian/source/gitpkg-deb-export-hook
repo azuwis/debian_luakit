@@ -1,0 +1,3 @@
+#!/bin/sh
+version="$(cd "$REPO_DIR"; git rev-parse --short "${GITPKG_ORIG_TREEISH}^{commit}")"
+sed -i "s/^VERSION_FROM_ARCHIVE=.*/VERSION_FROM_ARCHIVE=${version}/" build-utils/getversion.sh
